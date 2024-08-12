@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{template "fullname" .}}
+  labels:
+    heritage: {{ .Release.Service | quote }}
+    release: {{ .Release.Name | quote }}
+    chart: "{{.Chart.Name}}-{{.Chart.Version}}"
+spec:
+  replicas: {{default 1 .Values.replicaCount | quote}}
+  template:
+    metadata:
+      labels:
+        app: {{template "fullname" .}}
+        release: {{.Release.Name | quote }}
+    spec:
+      containers:
+      - name: {{template "fullname" .}}
+        image: stable-alpine
+        imagePullPolicy: {{default "IfNotPresent" .Values.pullPolicy}}
+        # volumeMounts:
+        # {{- if .Values.additionalVolumeMounts }}
+        # {{- toYaml .Values.volumeMounts | default "" | nindent 8 }}
+        # {{- end }}

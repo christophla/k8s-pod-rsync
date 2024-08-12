@@ -1,0 +1,1 @@
+helm template ./helm -f ./values.yaml --debug

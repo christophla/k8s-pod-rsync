@@ -1,1 +1,1 @@
-helm uninstall rsync-demo
+helm uninstall pod-rsync

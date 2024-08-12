@@ -1,0 +1,10 @@
+{{- if .Values.configMapData }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{template "fullname" .}}
+  labels:
+    app: {{template "fullname" .}}
+data:
+  {{- .Values.configMapData | toYaml | nindent 2 }}
+{{- end }}

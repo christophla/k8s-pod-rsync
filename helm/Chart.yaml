@@ -1,0 +1,12 @@
+name: pod-rsync
+description: Example of rsync synchronization between pod volumes
+version: 0.1.0
+keywords:
+  - http
+  - rsync
+home: "https://github.com/christophla/k8s-pod-rsync"
+sources:
+  - "https://github.com/christophla/k8s-pod-rsync"
+maintainers:
+  - name: christopher town
+    email: christopher@christophertown.com

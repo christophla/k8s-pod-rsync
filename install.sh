@@ -1,1 +1,1 @@
-helm upgrade --install rsync-demo bitnami/apache -f values.yaml
+helm upgrade --install pod-rsync ./helm -f values.yaml
