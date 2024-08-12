@@ -1,0 +1,1 @@
+helm upgrade --install rsync-demo bitnami/apache -f values.yaml
